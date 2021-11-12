@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffd480;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.midterm.midterm.DiaryController">
+   <left>
+       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0" BorderPane.alignment="CENTER">
+           <Button fx:id="back" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#backToMain"
+                   style="-fx-background-color: #99b3ff;" text="Back" textFill="WHITE">
+              <font>
+                  <Font name="Comic Sans MS" size="12.0"/>
+              </font>
+              <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+              </VBox.margin>
+           </Button>
+           <Button fx:id="importBtn" layoutX="20.0" layoutY="20.0" maxWidth="1.7976931348623157E308"
+                   mnemonicParsing="false" onAction="#importFile" style="-fx-background-color: #99b3ff;" text="Open"
+                   textFill="WHITE">
+              <font>
+                  <Font name="Comic Sans MS" size="12.0"/>
+              </font>
+              <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+              </VBox.margin>
+           </Button>
+           <Button fx:id="deletbtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clearTxt"
+                   style="-fx-background-color: #99b3ff;" text="Delete" textFill="WHITE">
+              <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+              </VBox.margin>
+           </Button>
+           <Button fx:id="saveBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#save"
+                   style="-fx-background-color: #99b3ff;" text="Save" textFill="WHITE">
+              <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+              </VBox.margin>
+           </Button>
+       </VBox>
+   </left>
+   <right>
+      <VBox alignment="CENTER" prefHeight="197.0" prefWidth="123.0" spacing="30.0" BorderPane.alignment="CENTER" />
+   </right>
+   <center>
+      <TextArea fx:id="txtField" prefHeight="200.0" prefWidth="200.0" promptText="Write here...." BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Calibri" size="20.0" />
+         </font>
+      </TextArea>
+   </center>
+   <top>
+       <VBox alignment="CENTER" prefHeight="109.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+           <Text fill="#cf2398" strokeType="OUTSIDE" strokeWidth="0.0" text="Note">
+              <font>
+                  <Font name="Comic Sans MS Italic" size="38.0"/>
+              </font>
+           </Text>
+           <MenuBar fx:id="menu" nodeOrientation="RIGHT_TO_LEFT">
+               <opaqueInsets>
+                   <Insets/>
+               </opaqueInsets>
+               <Menu fx:id="txtfont" mnemonicParsing="false" text="Font">
+                   <MenuItem fx:id="serif" mnemonicParsing="false" onAction="#changeFont" text="Serif"/>
+                   <MenuItem fx:id="gabriola" mnemonicParsing="false" onAction="#changeFont" text="Gabriola"/>
+                   <MenuItem fx:id="dubai" mnemonicParsing="false" onAction="#changeFont" text="Dubai"/>
+                   <MenuItem fx:id="arial" mnemonicParsing="false" onAction="#changeFont" text="Arial Narrow"/>
+                   <MenuItem fx:id="century" mnemonicParsing="false" onAction="#changeFont"
+                             text="Century Gothic"/>
+               </Menu>
+               <Menu fx:id="txtSize" mnemonicParsing="false" text="Size">
+                   <MenuItem fx:id="size11" mnemonicParsing="false" onAction="#changeSize" text="10"/>
+                   <MenuItem fx:id="size12" mnemonicParsing="false" onAction="#changeSize" text="12"/>
+                   <MenuItem fx:id="size15" mnemonicParsing="false" onAction="#changeSize" text="15"/>
+                   <MenuItem fx:id="size17" mnemonicParsing="false" onAction="#changeSize" text="17"/>
+                   <MenuItem fx:id="size20" mnemonicParsing="false" onAction="#changeSize" text="20"/>
+                   <MenuItem fx:id="size24" mnemonicParsing="false" onAction="#changeSize" text="24"/>
+                   <MenuItem fx:id="size27" mnemonicParsing="false" onAction="#changeSize" text="27"/>
+               </Menu>
+               <Menu fx:id="txtColor" mnemonicParsing="false" text="Color">
+                   <graphic>
+                       <ColorPicker fx:id="colorPicker">
+                           <value>
+                               <Color/>
+                           </value>
+                       </ColorPicker>
+                   </graphic>
+                   <MenuItem fx:id="bGColor" mnemonicParsing="false" onAction="#changeColor"
+                             text="Change Background"/>
+                   <MenuItem fx:id="txtColorBtn" mnemonicParsing="false" onAction="#changeColor"
+                             text="Change Text Color"/>
+               </Menu>
+           </MenuBar>
+       </VBox>
+   </top>
+   <bottom>
+       <VBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+           <DatePicker fx:id="callendar"/>
+       </VBox>
+   </bottom>
+</BorderPane>

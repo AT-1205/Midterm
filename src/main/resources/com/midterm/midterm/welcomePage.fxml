@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffd480;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.midterm.midterm.Controller">
+   <top>
+      <Text fill="#cf2398" strokeType="OUTSIDE" strokeWidth="0.0" text="My Notes" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Comic Sans MS Italic" size="35.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+         </BorderPane.margin>
+      </Text>
+   </top>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="50.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <Button fx:id="newNoteBtn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#createNewNote" prefWidth="150.0" style="-fx-background-color: #99b3ff;" text="New Note">
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+         </Button>
+         <Button fx:id="aboutBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#getInfo" prefWidth="150.0" style="-fx-background-color: #99b3ff;" text="About" />
+         <Button fx:id="exitBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#exit" prefWidth="150.0" style="-fx-background-color: #99b3ff;" text="Exit" />
+      </VBox>
+   </center>
+   <right>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <ImageView fitHeight="138.0" fitWidth="164.0" layoutX="9.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../../../pics/notebook.png" />
+         </ImageView>
+      </Pane>
+   </right>
+   <left>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <Canvas fx:id="canvasPanel" height="129.0" layoutY="-6.0" width="202.0" />
+      </Pane>
+   </left>
+</BorderPane>
